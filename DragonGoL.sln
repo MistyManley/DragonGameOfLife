@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonGoL", "DragonGoL\DragonGoL.csproj", "{FE133FF3-B44D-4A65-9014-6479C863AD78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DragonGoLTests", "DragonGoLTests\DragonGoLTests.csproj", "{286AED63-2220-43EA-8F13-C5D97FF6D3A5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE133FF3-B44D-4A65-9014-6479C863AD78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE133FF3-B44D-4A65-9014-6479C863AD78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE133FF3-B44D-4A65-9014-6479C863AD78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE133FF3-B44D-4A65-9014-6479C863AD78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{286AED63-2220-43EA-8F13-C5D97FF6D3A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{286AED63-2220-43EA-8F13-C5D97FF6D3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{286AED63-2220-43EA-8F13-C5D97FF6D3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{286AED63-2220-43EA-8F13-C5D97FF6D3A5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AF9CA004-BD99-4F47-82AB-9AC867C6C924}
+	EndGlobalSection
+EndGlobal
