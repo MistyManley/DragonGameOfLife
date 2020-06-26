@@ -25,6 +25,7 @@ namespace DragonGoL.Control
 
         protected override void OnReceive(object message)
         {
+            //TODO: handle death watch of dragon.
             switch (message)
             {
                 case "start":

@@ -12,7 +12,7 @@ namespace DragonGoL
             {
                 var commandControl = dragonSystem.ActorOf(Control.ConsoleControl.Props(), "ConsoleControl");
                 commandControl.Tell("start");
-                while(true)
+                while (!commandControl.IsNobody())
                 {
 
                 }
