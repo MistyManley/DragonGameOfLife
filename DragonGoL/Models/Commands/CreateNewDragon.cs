@@ -6,20 +6,14 @@
     public class CreateNewDragon
     {
         /// <summary>
-        /// Creates a new <see cref="CreateNewDragon"/> command with a specified type, name and weight.
+        /// Console command containing a reference to the new dragon actor.
         /// </summary>
-        /// <param name="type">The type of dragon to create.</param>
-        /// <param name="name">The dragons name.</param>
-        /// <param name="weight">The intial weight of the dragon.</param>
-        public CreateNewDragon(string type, string name, int weight)
+        /// <param name="dragonRef">A dragon actor reference.</param>
+        public CreateNewDragon(Akka.Actor.IActorRef dragonRef)
         {
-            DragonType = type;
-            Name = name;
-            Weight = weight;
+            Dragon = dragonRef;
         }
 
-        public string DragonType { get; }
-        public string Name { get; }
-        public int Weight { get; }
+        public Akka.Actor.IActorRef Dragon { get; }
     }
 }

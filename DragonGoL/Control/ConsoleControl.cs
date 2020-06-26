@@ -1,5 +1,6 @@
 ﻿using Akka.Actor;
 using Akka.Event;
+using DragonGoL.Dragon;
 using DragonGoL.Models.Commands;
 using DragonGoL.Models.Protocol;
 using System;
@@ -45,6 +46,9 @@ namespace DragonGoL.Control
                     break;
                 case NoDragon noDragon:
                     Console.WriteLine($"Error: No Dragon to update. Create a new dragon first.");
+                    break;
+                case DragonCreated dragon:
+                    Console.WriteLine($"New Dragon Created: {dragon}");
                     break;
             }
 
@@ -94,7 +98,8 @@ namespace DragonGoL.Control
             Console.WriteLine("Please specify the dragons start weight");
             var weight = Console.ReadLine();
             int.TryParse(weight, out int intWeight);
-            dragonControl.Tell(new CreateNewDragon("FireDragon", currentDragonName, intWeight));
+            var dragon = Context.ActorOf(FireDragon.Props(currentDragonName, intWeight), currentDragonName);
+            dragonControl.Tell(new CreateNewDragon(dragon));
             GetDragonStatus();
         }
 

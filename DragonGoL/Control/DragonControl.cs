@@ -25,7 +25,8 @@ namespace DragonGoL.Control
             {
                 //TODO: Improve how we control these commands.
                 case CreateNewDragon createNew:
-                    dragon = Context.ActorOf(FireDragon.Props(createNew.Name, createNew.Weight), createNew.Name);
+                    dragon = createNew.Dragon;
+                    if (!dragon.IsNobody()) Sender.Tell(DragonCreated.Instance, dragon);
                     lastUpdate = DateTime.Now;
                     break;
                 case FeedDragon feedDragon:
