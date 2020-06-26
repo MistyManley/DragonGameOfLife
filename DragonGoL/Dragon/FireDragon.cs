@@ -41,8 +41,11 @@ namespace DragonGoL.Dragon
             Log.Debug("Dragon received: {message}");
             switch (message)
             {
-                case IFood food:
-                    FoodReceived(food);
+                case Feed feed:
+                    FoodReceived(feed.Food);
+                    break;
+                case Play play:
+                    PlayReceived(play.HappinessValue);
                     break;
                 case ReadHappiness happy:
                     Sender.Tell(new RespondHappiness(happy.RequestId, happinessLevel));
@@ -89,6 +92,11 @@ namespace DragonGoL.Dragon
                 stomach.Forward(food);
                 happinessLevel += food.HappinessValue;
             }
+        }
+
+        private void PlayReceived(int happiness)
+        {
+            happinessLevel += happiness;
         }
 
         private void UpdateStageOfLife()

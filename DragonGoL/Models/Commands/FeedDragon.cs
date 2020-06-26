@@ -7,6 +7,7 @@ namespace DragonGoL.Models.Commands
 {
     public class FeedDragon
     {
+        public static string KnownFoods = $"{Charcoal.FoodName} {Greenery.FoodName} {Steak.FoodName}";
         string food;
         public FeedDragon(string foodType)
         {

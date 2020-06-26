@@ -5,7 +5,7 @@ using System.Text;
 
 namespace DragonGoL.Models.Protocol
 {
-    class Feed
+    public class Feed
     {
         public Feed(IFood food)
         {

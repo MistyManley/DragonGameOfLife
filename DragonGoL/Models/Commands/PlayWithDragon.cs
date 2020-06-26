@@ -6,6 +6,7 @@ namespace DragonGoL.Models.Commands
 {
     public class PlayWithDragon
     {
+        public static string KnownPlayTypes = $"games pet";
         string play;
         public PlayWithDragon(string playType)
         {

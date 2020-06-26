@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DragonGoL.Models.Protocol
 {
-    class Play
+    public class Play
     {
         public Play(int happinessValue)
         {

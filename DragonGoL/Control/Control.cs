@@ -38,15 +38,18 @@ namespace DragonGoL.Control
                     lastUpdate = DateTime.Now;
                     break;
                 case FeedDragon feedDragon:
+                    if (dragon.IsNobody()) return;
                     dragon.Tell(new Feed(feedDragon.Food));
                     break;
                 case PlayWithDragon play:
                     dragon.Tell(new Play(play.HappinessValue));
                     break;
-                case "Update":
+                case StatusUpdate status:
                     Update();
                     break;
             }
+            //after all commands always Update. 
+            Update();
         }
 
 

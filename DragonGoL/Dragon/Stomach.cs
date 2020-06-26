@@ -37,7 +37,7 @@ namespace DragonGoL.Dragon
             }
         }
 
-        public static Props Props() => Akka.Actor.Props.Create<FireDragon>();
+        public static Props Props() => Akka.Actor.Props.Create<Stomach>();
 
     }
 }
