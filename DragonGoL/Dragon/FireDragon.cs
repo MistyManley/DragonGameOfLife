@@ -20,6 +20,8 @@ namespace DragonGoL.Dragon
 
         private decimal age = 0;
         private int happinessLevel = 50;
+        private const int MinHappinessLevel = 0;
+        private const int MaxHappinessLevel = 100;
         private IStageOfLife stageOfLife = new BabyStage();
         private IActorRef stomach;
         private string Name { get; }
@@ -70,7 +72,7 @@ namespace DragonGoL.Dragon
         {
             age += grow.DaysToGrow;
             UpdateStageOfLife();
-            happinessLevel -= (int)(stageOfLife.DailyHappinessDecrease * grow.DaysToGrow);
+            AdjustHappiness((int)( -1 * stageOfLife.DailyHappinessDecrease * grow.DaysToGrow));
             stomach.Tell(new ProcessFood((int)(stageOfLife.DailyHunger * grow.DaysToGrow)));
         }
 
@@ -79,7 +81,7 @@ namespace DragonGoL.Dragon
             if (food is Charcoal)
             {
                 stomach.Forward(food);
-                happinessLevel += food.HappinessValue;
+                AdjustHappiness(food.HappinessValue);
                 return;
             }
             if (happinessLevel < 20)
@@ -90,13 +92,18 @@ namespace DragonGoL.Dragon
             else
             {
                 stomach.Forward(food);
-                happinessLevel += food.HappinessValue;
+                AdjustHappiness(food.HappinessValue);
             }
+        }
+
+        private void AdjustHappiness(int changeValue)
+        {
+            happinessLevel = Math.Min(MaxHappinessLevel, Math.Max(MinHappinessLevel, happinessLevel + changeValue));
         }
 
         private void PlayReceived(int happiness)
         {
-            happinessLevel += happiness;
+            AdjustHappiness(happiness);
         }
 
         private void UpdateStageOfLife()

@@ -8,8 +8,10 @@ namespace DragonGoL.Models.StageOfLife
     {
         public static int MaxAge => 300;
 
-        public int DailyHappinessDecrease => 40;
+        public int DailyHappinessDecrease => 15;
 
-        public int DailyHunger => 40;
+        public int DailyHunger => 15;
+
+        public string StageDescription => "Child";
     }
 }

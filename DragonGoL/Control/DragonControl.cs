@@ -15,21 +15,17 @@ namespace DragonGoL.Control
     /// <summary>
     /// The top level AKKA Supervisor.
     /// </summary>
-    class ControlActor : UntypedActor
+    public class DragonControl : UntypedActor
     {
         ILoggingAdapter Log = Context.GetLogger();
         IActorRef dragon;
         DateTime lastUpdate;
-        protected override void PreStart()
-        {
-            base.PreStart();
-            //setup sub actors.
-
-        }
 
         protected override void OnReceive(object message)
         {
             Log.Debug($"Control Actor received message: {message}");
+            //before all commands always update to set values to current. 
+            Update();
             switch (message)
             {
                 //TODO: Improve how we control these commands.
@@ -38,30 +34,43 @@ namespace DragonGoL.Control
                     lastUpdate = DateTime.Now;
                     break;
                 case FeedDragon feedDragon:
-                    if (dragon.IsNobody()) return;
+                    if (!CheckDragonExists()) return; 
                     dragon.Tell(new Feed(feedDragon.Food));
                     break;
                 case PlayWithDragon play:
+                    if (!CheckDragonExists()) return; 
                     dragon.Tell(new Play(play.HappinessValue));
                     break;
-                case StatusUpdate status:
-                    Update();
+                case ReadHappiness readHappiness:
+                    if (!CheckDragonExists()) return; 
+                    dragon.Forward(readHappiness);
+                    break;
+                case ReadHunger readHunger:
+                    if (!CheckDragonExists()) return; 
+                    dragon.Forward(readHunger);
+                    break;
+                case ReadStageOfLife stage:
+                    if (!CheckDragonExists()) return; 
+                    dragon.Forward(stage);
                     break;
             }
-            //after all commands always Update. 
-            Update();
         }
 
+        private bool CheckDragonExists()
+        {
+            if (dragon.IsNobody())
+                Sender.Tell(new NoDragon());
+            return !dragon.IsNobody() ;
+        }
 
         private void Update()
         {
             if (dragon.IsNobody()) return;
             //TODO: age dragon
-            //TODO: process food
             //TODO: check dragon alive.
             decimal timeSinceLastCheck = (decimal)((DateTime.Now - lastUpdate).TotalMinutes);
             dragon.Tell(new Grow(timeSinceLastCheck));
         }
-        public static Props Props() => Akka.Actor.Props.Create<ControlActor>();
+        public static Props Props() => Akka.Actor.Props.Create<DragonControl>();
     }
 }
