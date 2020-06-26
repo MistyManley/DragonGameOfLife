@@ -12,6 +12,7 @@ namespace DragonGoL
             {
                 var commandControl = dragonSystem.ActorOf(Control.ConsoleControl.Props(), "ConsoleControl");
                 commandControl.Tell("start");
+                // TODO: sort out how to listen for exit.
                 while (!commandControl.IsNobody())
                 {
 
