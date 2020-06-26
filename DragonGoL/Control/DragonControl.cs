@@ -1,19 +1,14 @@
 ﻿using Akka.Actor;
-using Akka.Dispatch.SysMsg;
 using Akka.Event;
 using DragonGoL.Dragon;
 using DragonGoL.Models.Commands;
-using DragonGoL.Models.Food;
 using DragonGoL.Models.Protocol;
 using System;
-using System.Collections.Generic;
-using System.Net.Cache;
-using System.Text;
 
 namespace DragonGoL.Control
 {
     /// <summary>
-    /// The top level AKKA Supervisor.
+    /// A Dragon control used to accept console commands and convert them into dragon commands.
     /// </summary>
     public class DragonControl : UntypedActor
     {

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DragonGoL.Models.StageOfLife
+﻿namespace DragonGoL.Models.StageOfLife
 {
+    /// <summary>
+    /// Child <see cref="IStageOfLife"/>.
+    /// </summary>
     public class ChildStage : IStageOfLife
     {
         public static int MaxAge => 300;

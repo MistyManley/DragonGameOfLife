@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DragonGoL.Models.Protocol
+﻿namespace DragonGoL.Models.Protocol
 {
+    /// <summary>
+    /// Command to grow the dragon by a given number of days.
+    /// </summary>
     public class Grow
     {
         public Grow(decimal daysPassed)

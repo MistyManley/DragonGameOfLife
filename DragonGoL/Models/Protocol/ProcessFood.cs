@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DragonGoL.Models.Protocol
+﻿namespace DragonGoL.Models.Protocol
 {
+    /// <summary>
+    /// Command to tell a stomach to process food (usually increases hunger).
+    /// </summary>
     public class ProcessFood
     {
         public ProcessFood(int quantityProcessed)

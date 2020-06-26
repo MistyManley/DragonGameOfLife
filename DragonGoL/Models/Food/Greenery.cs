@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DragonGoL.Models.Food
+﻿namespace DragonGoL.Models.Food
 {
     /// <summary>
     /// Dragons most hated food.

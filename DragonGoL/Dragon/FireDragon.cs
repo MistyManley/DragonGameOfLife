@@ -1,13 +1,9 @@
 ﻿using Akka.Actor;
 using Akka.Event;
-using DragonGoL.Models.StageOfLife;
 using DragonGoL.Models.Food;
 using DragonGoL.Models.Protocol;
+using DragonGoL.Models.StageOfLife;
 using System;
-using System.Collections.Generic;
-using System.Net;
-using System.Text;
-using System.Diagnostics;
 
 namespace DragonGoL.Dragon
 {
@@ -27,6 +23,11 @@ namespace DragonGoL.Dragon
         private string Name { get; }
         private int weight;
 
+        /// <summary>
+        /// Creates a new <see cref="FireDragon"/> with a name and start weight./>
+        /// </summary>
+        /// <param name="name">Dragons name.</param>
+        /// <param name="startWeight">Dragons start weight.</param>
         public FireDragon(string name, int startWeight)
         {
             Name = name;

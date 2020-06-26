@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DragonGoL.Models.Protocol
+﻿namespace DragonGoL.Models.Protocol
 {
+    /// <summary>
+    /// Command to surface a hunger value.
+    /// </summary>
     public class RespondHunger
     {
         public RespondHunger(long requestId, int hungerValue)

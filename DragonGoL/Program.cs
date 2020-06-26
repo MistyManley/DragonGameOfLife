@@ -1,8 +1,5 @@
-﻿using System;
-using Akka;
-using Akka.Actor;
-using DragonGoL.Models.Commands;
-using DragonGoL.Models.Protocol;
+﻿using Akka.Actor;
+using System;
 
 namespace DragonGoL
 {

@@ -1,10 +1,10 @@
 ﻿using DragonGoL.Models.StageOfLife;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DragonGoL.Models.Protocol
 {
+    /// <summary>
+    /// Command to surface a <see cref="IStageOfLife"/> value.
+    /// </summary>
     public class RespondStageOfLife
     {
         public RespondStageOfLife(long requestId, IStageOfLife stageOfLifeValue)

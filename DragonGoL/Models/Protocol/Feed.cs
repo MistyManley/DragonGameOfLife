@@ -1,10 +1,10 @@
 ﻿using DragonGoL.Models.Food;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace DragonGoL.Models.Protocol
 {
+    /// <summary>
+    /// Dragon protol command to feed the dragon with food.
+    /// </summary>
     public class Feed
     {
         public Feed(IFood food)

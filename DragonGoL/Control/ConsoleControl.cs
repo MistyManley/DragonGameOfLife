@@ -1,20 +1,13 @@
-﻿using Akka;
-using Akka.Actor;
-using Akka.Dispatch.SysMsg;
+﻿using Akka.Actor;
 using Akka.Event;
-using DragonGoL.Dragon;
 using DragonGoL.Models.Commands;
-using DragonGoL.Models.Food;
 using DragonGoL.Models.Protocol;
 using System;
-using System.Collections.Generic;
-using System.Net.Cache;
-using System.Text;
 
 namespace DragonGoL.Control
 {
     /// <summary>
-    /// The top level AKKA Supervisor.
+    /// The top level AKKA Supervisor in charge of the Console management
     /// </summary>
     public class ConsoleControl : UntypedActor
     {
@@ -57,19 +50,19 @@ namespace DragonGoL.Control
 
         }
 
-        public void ProgramStart()
+        private void ProgramStart()
         {
             Console.WriteLine("To create a new dragon use command: new (n)");
             consoleRead.Tell("read");
         }
 
-        public void NextCommand()
+        private void NextCommand()
         {
             Console.WriteLine("Commands available are: new (n), feed (f), play (p), status (s) and exit");
             consoleRead.Tell("read");
         }
 
-        public void CommandInput(string text)
+        private void CommandInput(string text)
         {
             switch (text)
             {

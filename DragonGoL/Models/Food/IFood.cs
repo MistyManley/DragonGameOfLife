@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DragonGoL.Models.Food
+﻿namespace DragonGoL.Models.Food
 {
+    /// <summary>
+    /// Food type. 
+    /// </summary>
     public interface IFood
     {
         int HungerValue { get; }

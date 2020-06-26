@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Text;
-
-namespace DragonGoL.Models.Protocol
+﻿namespace DragonGoL.Models.Protocol
 {
+    /// <summary>
+    /// Command to read the happiness of a dragon.
+    /// </summary>
     public class ReadHappiness
     {
         public ReadHappiness(long requestId)

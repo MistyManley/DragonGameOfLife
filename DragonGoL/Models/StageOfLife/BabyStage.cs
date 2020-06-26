@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DragonGoL.Models.StageOfLife
+﻿namespace DragonGoL.Models.StageOfLife
 {
+    /// <summary>
+    /// Intial baby <see cref="IStageOfLife"/>.
+    /// </summary>
     public class BabyStage : IStageOfLife
     {
-        public static int MaxAge => 5;
+        public static int MaxAge => 50;
 
         public int DailyHappinessDecrease => 10;
 

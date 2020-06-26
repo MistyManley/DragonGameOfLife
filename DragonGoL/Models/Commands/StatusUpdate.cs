@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DragonGoL.Models.Commands
+﻿namespace DragonGoL.Models.Commands
 {
+    /// <summary>
+    /// A console command to request the current status of the dragon.
+    /// </summary>
     public class StatusUpdate
     {
-        public StatusUpdate() { }
     }
 }

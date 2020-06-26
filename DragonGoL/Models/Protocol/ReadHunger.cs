@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Dynamic;
-using System.Text;
-
-namespace DragonGoL.Models.Protocol
+﻿namespace DragonGoL.Models.Protocol
 {
+    /// <summary>
+    /// Command to read the hunger level of a dragon.
+    /// </summary>
     public class ReadHunger
     {
         public ReadHunger(long requestId)

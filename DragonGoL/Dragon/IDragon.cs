@@ -1,10 +1,8 @@
-﻿using Akka.Actor;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DragonGoL.Dragon
+﻿namespace DragonGoL.Dragon
 {
+    /// <summary>
+    /// A dragon interface - to allow for multiple dragon types with different preferences
+    /// </summary>
     public interface IDragon
     {
     }
